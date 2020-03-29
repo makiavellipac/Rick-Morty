@@ -15,6 +15,7 @@ const useStyles = makeStyles(theme => ({
     color:"white",
     height:48,
     justifyContent:"center",
+    position:"fixed"
   },
   imagen:{
     height:45,

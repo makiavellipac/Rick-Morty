@@ -1,0 +1,13 @@
+.icon-bar{
+    position: fixed;
+    top: 18%;
+    left: 1%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    flex-direction: column;
+}
+
+.icon-bar img{
+    width: 10%;
+}
