@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {SyncLoader} from 'react-spinners'
 import {fetchPosts} from '../../redux/actions/postActions'
 import {Card,CardActionArea,CardContent,Typography,InputBase} from '@material-ui/core'
-
+import './index.css'
 
 
 function CardPerson (props){
@@ -19,17 +19,19 @@ function CardPerson (props){
 
    
     return(
-        <>
+        <div className="container">
             <InputBase
               placeholder="Search..."
               onChange={eventOnChangue}
+              className="searchBar"
             />
 
-            
-            {props.data.isFetching?<SyncLoader/>
-            :(
+            <div className="containerData">
+            {
+            props.data.isFetching?<SyncLoader/>
+            :(props.data.posts &&
             props.data.posts.map(post => (
-              <Card key={post.id}>
+              <Card key={post.id} className="cards">
               <CardActionArea>
                 <img src={post.image} alt={post.name} key={post.id}/>
                 <CardContent>
@@ -38,12 +40,11 @@ function CardPerson (props){
                   </Typography>
                 </CardContent>
               </CardActionArea>
-              
               </Card> 
               
             )))}
-            
-        </>
+            </div>
+        </div>
     )
 }
 

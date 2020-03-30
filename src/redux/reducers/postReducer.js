@@ -1,11 +1,10 @@
 import { FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS, FETCH_POSTS_ERROR } from '../actions/postActions'
 
 const initialState = {
-  posts: [],
+  posts: null,
   isFetching: false,
   error: null,
   pages:0,
-  text:''
 }
 
 function posts (state = initialState, action) {
@@ -13,7 +12,8 @@ function posts (state = initialState, action) {
     case FETCH_POSTS_REQUEST:
       return {
         ...state,
-        isFetching: true
+        isFetching: true,
+        posts:null
       }
 
     case FETCH_POSTS_SUCCESS:
@@ -28,7 +28,7 @@ function posts (state = initialState, action) {
       return {
         ...state,
         isFetching: false,
-        error: action.payload.error
+        error: action.payload.error,
       }
 
     default:

@@ -16,10 +16,10 @@ export const fetchPosts = (text) => (dispatch) => {
         }
       })
     })
-    .catch(error => {
+    .catch(err => {
       dispatch({
         type: FETCH_POSTS_ERROR,
-        error: error.toString()
+        error: err.toString(),
       })
     })
 }

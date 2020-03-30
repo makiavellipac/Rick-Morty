@@ -5,11 +5,7 @@ import Card from '../../components/CardPerson';
 
 function Characters(){
     return(
-        <div style={{
-                alignItems:"center",
-                justifyContent:"center",
-                paddingTop:"10vh",
-            }}>
+        <div className="characters">
             <Card/>
         </div>
     );
